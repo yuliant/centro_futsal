@@ -1,0 +1,48 @@
+[10-Sep-2023 14:41:17 Asia/Jakarta] PHP Warning:  "continue" targeting switch is equivalent to "break". Did you mean to use "continue 2"? in /home/tpip2861/public_html/bap.tpijuanda.id/application/third_party/dompdf/include/text_renderer.cls.php on line 155
+[02-Oct-2023 15:59:18 Asia/Jakarta] PHP Warning:  "continue" targeting switch is equivalent to "break". Did you mean to use "continue 2"? in /home/tpip2861/public_html/bap.tpijuanda.id/application/third_party/dompdf/include/text_renderer.cls.php on line 155
+[02-Oct-2023 16:19:20 Asia/Jakarta] PHP Warning:  "continue" targeting switch is equivalent to "break". Did you mean to use "continue 2"? in /home/tpip2861/public_html/bap.tpijuanda.id/application/third_party/dompdf/include/text_renderer.cls.php on line 155
+[08-Oct-2023 10:57:06 UTC] PHP Notice:  Undefined index: log_path in /home/imit3146/public_html/bappo.imijakut.id/system/core/Log.php on line 127
+[08-Oct-2023 10:57:06 UTC] PHP Notice:  Undefined index: log_path in /home/imit3146/public_html/bappo.imijakut.id/system/core/Log.php on line 127
+[08-Oct-2023 10:57:06 UTC] PHP Warning:  mkdir(): Invalid path in /home/imit3146/public_html/bappo.imijakut.id/system/core/Log.php on line 131
+[08-Oct-2023 10:57:06 UTC] PHP Notice:  Undefined index: log_threshold in /home/imit3146/public_html/bappo.imijakut.id/system/core/Log.php on line 138
+[08-Oct-2023 10:57:06 UTC] PHP Notice:  Undefined index: log_threshold in /home/imit3146/public_html/bappo.imijakut.id/system/core/Log.php on line 142
+[08-Oct-2023 10:57:19 UTC] PHP Notice:  Undefined index: log_path in /home/imit3146/public_html/bappo.imijakut.id/system/core/Log.php on line 127
+[08-Oct-2023 10:57:19 UTC] PHP Notice:  Undefined index: log_path in /home/imit3146/public_html/bappo.imijakut.id/system/core/Log.php on line 127
+[08-Oct-2023 10:57:19 UTC] PHP Warning:  mkdir(): Invalid path in /home/imit3146/public_html/bappo.imijakut.id/system/core/Log.php on line 131
+[08-Oct-2023 10:57:19 UTC] PHP Notice:  Undefined index: log_threshold in /home/imit3146/public_html/bappo.imijakut.id/system/core/Log.php on line 138
+[08-Oct-2023 10:57:19 UTC] PHP Notice:  Undefined index: log_threshold in /home/imit3146/public_html/bappo.imijakut.id/system/core/Log.php on line 142
+[08-Oct-2023 11:14:41 UTC] PHP Warning:  "continue" targeting switch is equivalent to "break". Did you mean to use "continue 2"? in /home/imit3146/public_html/bappo.imijakut.id/application/third_party/dompdf/include/text_renderer.cls.php on line 155
+[08-Oct-2023 11:17:48 UTC] PHP Warning:  "continue" targeting switch is equivalent to "break". Did you mean to use "continue 2"? in /home/imit3146/public_html/bappo.imijakut.id/application/third_party/dompdf/include/text_renderer.cls.php on line 155
+[08-Oct-2023 14:05:15 UTC] PHP Notice:  Undefined index: log_path in /home/imit3146/public_html/bappo.imijakut.id/system/core/Log.php on line 127
+[08-Oct-2023 14:05:15 UTC] PHP Notice:  Undefined index: log_path in /home/imit3146/public_html/bappo.imijakut.id/system/core/Log.php on line 127
+[08-Oct-2023 14:05:15 UTC] PHP Warning:  mkdir(): Invalid path in /home/imit3146/public_html/bappo.imijakut.id/system/core/Log.php on line 131
+[08-Oct-2023 14:05:15 UTC] PHP Notice:  Undefined index: log_threshold in /home/imit3146/public_html/bappo.imijakut.id/system/core/Log.php on line 138
+[08-Oct-2023 14:05:15 UTC] PHP Notice:  Undefined index: log_threshold in /home/imit3146/public_html/bappo.imijakut.id/system/core/Log.php on line 142
+[08-Oct-2023 14:05:33 UTC] PHP Notice:  Undefined index: log_path in /home/imit3146/public_html/bappo.imijakut.id/system/core/Log.php on line 127
+[08-Oct-2023 14:05:33 UTC] PHP Notice:  Undefined index: log_path in /home/imit3146/public_html/bappo.imijakut.id/system/core/Log.php on line 127
+[08-Oct-2023 14:05:33 UTC] PHP Warning:  mkdir(): Invalid path in /home/imit3146/public_html/bappo.imijakut.id/system/core/Log.php on line 131
+[08-Oct-2023 14:05:33 UTC] PHP Notice:  Undefined index: log_threshold in /home/imit3146/public_html/bappo.imijakut.id/system/core/Log.php on line 138
+[08-Oct-2023 14:05:33 UTC] PHP Notice:  Undefined index: log_threshold in /home/imit3146/public_html/bappo.imijakut.id/system/core/Log.php on line 142
+[08-Oct-2023 14:13:26 UTC] PHP Notice:  Undefined index: log_path in /home/imit3146/public_html/bappo.imijakut.id/system/core/Log.php on line 127
+[08-Oct-2023 14:13:26 UTC] PHP Notice:  Undefined index: log_path in /home/imit3146/public_html/bappo.imijakut.id/system/core/Log.php on line 127
+[08-Oct-2023 14:13:26 UTC] PHP Warning:  mkdir(): Invalid path in /home/imit3146/public_html/bappo.imijakut.id/system/core/Log.php on line 131
+[08-Oct-2023 14:13:26 UTC] PHP Notice:  Undefined index: log_threshold in /home/imit3146/public_html/bappo.imijakut.id/system/core/Log.php on line 138
+[08-Oct-2023 14:13:26 UTC] PHP Notice:  Undefined index: log_threshold in /home/imit3146/public_html/bappo.imijakut.id/system/core/Log.php on line 142
+[08-Oct-2023 14:13:41 UTC] PHP Notice:  Undefined index: log_path in /home/imit3146/public_html/bappo.imijakut.id/system/core/Log.php on line 127
+[08-Oct-2023 14:13:41 UTC] PHP Notice:  Undefined index: log_path in /home/imit3146/public_html/bappo.imijakut.id/system/core/Log.php on line 127
+[08-Oct-2023 14:13:41 UTC] PHP Warning:  mkdir(): Invalid path in /home/imit3146/public_html/bappo.imijakut.id/system/core/Log.php on line 131
+[08-Oct-2023 14:13:41 UTC] PHP Notice:  Undefined index: log_threshold in /home/imit3146/public_html/bappo.imijakut.id/system/core/Log.php on line 138
+[08-Oct-2023 14:13:41 UTC] PHP Notice:  Undefined index: log_threshold in /home/imit3146/public_html/bappo.imijakut.id/system/core/Log.php on line 142
+[09-Oct-2023 10:00:15 UTC] PHP Notice:  Undefined index: log_path in /home/imit3146/public_html/bappo.imijakut.id/system/core/Log.php on line 127
+[09-Oct-2023 10:00:15 UTC] PHP Notice:  Undefined index: log_path in /home/imit3146/public_html/bappo.imijakut.id/system/core/Log.php on line 127
+[09-Oct-2023 10:00:15 UTC] PHP Warning:  mkdir(): Invalid path in /home/imit3146/public_html/bappo.imijakut.id/system/core/Log.php on line 131
+[09-Oct-2023 10:00:15 UTC] PHP Notice:  Undefined index: log_threshold in /home/imit3146/public_html/bappo.imijakut.id/system/core/Log.php on line 138
+[09-Oct-2023 10:00:15 UTC] PHP Notice:  Undefined index: log_threshold in /home/imit3146/public_html/bappo.imijakut.id/system/core/Log.php on line 142
+[09-Oct-2023 10:00:28 UTC] PHP Notice:  Undefined index: log_path in /home/imit3146/public_html/bappo.imijakut.id/system/core/Log.php on line 127
+[09-Oct-2023 10:00:28 UTC] PHP Notice:  Undefined index: log_path in /home/imit3146/public_html/bappo.imijakut.id/system/core/Log.php on line 127
+[09-Oct-2023 10:00:28 UTC] PHP Warning:  mkdir(): Invalid path in /home/imit3146/public_html/bappo.imijakut.id/system/core/Log.php on line 131
+[09-Oct-2023 10:00:28 UTC] PHP Notice:  Undefined index: log_threshold in /home/imit3146/public_html/bappo.imijakut.id/system/core/Log.php on line 138
+[09-Oct-2023 10:00:28 UTC] PHP Notice:  Undefined index: log_threshold in /home/imit3146/public_html/bappo.imijakut.id/system/core/Log.php on line 142
+[11-Oct-2023 05:18:03 UTC] PHP Warning:  "continue" targeting switch is equivalent to "break". Did you mean to use "continue 2"? in /home/imit3146/public_html/bappo.imijakut.id/application/third_party/dompdf/include/text_renderer.cls.php on line 155
+[11-Oct-2023 05:19:12 UTC] PHP Warning:  "continue" targeting switch is equivalent to "break". Did you mean to use "continue 2"? in /home/imit3146/public_html/bappo.imijakut.id/application/third_party/dompdf/include/text_renderer.cls.php on line 155
+[13-Oct-2023 13:59:23 UTC] PHP Warning:  "continue" targeting switch is equivalent to "break". Did you mean to use "continue 2"? in /home/imit3146/public_html/bappo.imijakut.id/application/third_party/dompdf/include/text_renderer.cls.php on line 155
