@@ -28,7 +28,7 @@
 
                                 <form class="user" action="<?php echo base_url('auth'); ?>" method="post">
                                     <div class="form-group">
-                                        <input type="text" class="form-control form-control-user" value="<?php echo set_value('email'); ?>" name="email" id="email" placeholder="Masukkan Email..." onkeypress="return isNumber(event)">
+                                        <input type="email" class="form-control form-control-user" value="<?php echo set_value('email'); ?>" name="email" id="email" placeholder="Masukkan Email...">
                                         <?php echo form_error('email', '<small class="text-danger pl-3">', '</small>'); ?>
                                     </div>
                                     <div class="form-group">

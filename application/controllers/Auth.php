@@ -35,6 +35,7 @@ class Auth extends CI_Controller
 		}
 
 		$this->form_validation->set_rules("name", "Name", "required|trim");
+		$this->form_validation->set_rules("no_telp", "Nomor Telp", "required");
 		$this->form_validation->set_rules("email", "Email", "required|valid_email|trim|is_unique[user.email]", [
 			'is_unique' => 'This email has already registered'
 		]);
@@ -54,17 +55,29 @@ class Auth extends CI_Controller
 			$data = [
 				'name' => htmlspecialchars($this->input->post('name', true)),
 				'email' => htmlspecialchars($email),
+				'no_telp' => htmlspecialchars($this->input->post('no_telp', true)),
 				'image' => 'default.jpg',
 				'password' => password_hash($this->input->post('password1'), PASSWORD_DEFAULT),
 				'role_id' => 3,
 				'is_active' => 1,
-				'date_created' => time()
+				'date_created' => time(),
+				'no_member' => $this->_no_member(),
 			];
 			$this->db->insert('user', $data);
 
 			$this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Congratulation! your account has been created</div>');
 			redirect('auth');
 		}
+	}
+
+	private function _no_member()
+	{
+		$this->db->from('user');
+		$this->db->where('role_id', '3');
+		$angka_urut = $this->db->get()->num_rows() + 1;
+
+		$angka_urut_format = sprintf('%05d', $angka_urut);
+		return $angka_urut_format;
 	}
 
 	private function _login()
@@ -85,8 +98,10 @@ class Auth extends CI_Controller
 					$this->session->set_userdata($data);
 					if ($user['role_id'] == 1) {
 						redirect('admin');
-					} else {
+					} elseif ($user['role_id'] == 2) {
 						redirect('user');
+					} else {
+						redirect('home');
 					}
 				} else {
 					$this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Wrong password</div>');

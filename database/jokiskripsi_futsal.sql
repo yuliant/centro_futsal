@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Oct 15, 2023 at 01:59 AM
+-- Generation Time: Jan 17, 2024 at 04:43 AM
 -- Server version: 5.7.33
 -- PHP Version: 7.4.19
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `freelance_bap_imigrasi_jakut`
+-- Database: `jokiskripsi_futsal`
 --
 
 -- --------------------------------------------------------
@@ -169,6 +169,76 @@ INSERT INTO `pemohon_data_diri` (`id_pemohon_dd`, `id_tgl_kedatangan`, `alasan_b
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tb_jadwal`
+--
+
+CREATE TABLE `tb_jadwal` (
+  `id_jadwal` int(11) NOT NULL,
+  `id_lapangan` int(11) NOT NULL,
+  `tgl_jadwal` date NOT NULL,
+  `jam` varchar(125) NOT NULL,
+  `status_jadwal` int(1) NOT NULL DEFAULT '0' COMMENT '0: blm ad booking, 1: booked, 2: sewa'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tb_jadwal`
+--
+
+INSERT INTO `tb_jadwal` (`id_jadwal`, `id_lapangan`, `tgl_jadwal`, `jam`, `status_jadwal`) VALUES
+(2, 2, '2024-01-17', '08.00 - 09.01', 1),
+(3, 2, '2024-01-17', '07.00 - 08.01', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_lapangan`
+--
+
+CREATE TABLE `tb_lapangan` (
+  `id_lapangan` int(11) NOT NULL,
+  `nama_lapangan` varchar(255) NOT NULL,
+  `keterangan` text NOT NULL,
+  `harga` varchar(12) NOT NULL,
+  `gambar` varchar(255) NOT NULL,
+  `aktif` int(1) NOT NULL DEFAULT '1' COMMENT '1: aktif, 0:non aktif'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tb_lapangan`
+--
+
+INSERT INTO `tb_lapangan` (`id_lapangan`, `nama_lapangan`, `keterangan`, `harga`, `gambar`, `aktif`) VALUES
+(2, 'Lapangan A1', 'Keterangan1', '10001', '8538492.jpg', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_penyewaan`
+--
+
+CREATE TABLE `tb_penyewaan` (
+  `id_penyewaan` int(11) NOT NULL,
+  `id_jadwal` int(11) NOT NULL,
+  `id_user` int(11) NOT NULL,
+  `id_lapangan` int(11) NOT NULL,
+  `no_telp` varchar(16) NOT NULL,
+  `harga` varchar(12) NOT NULL,
+  `bukti_bayar` varchar(255) DEFAULT NULL,
+  `status` int(1) NOT NULL DEFAULT '0' COMMENT '0: tunda, \r\n1: konfirmasi, \r\n2: batal',
+  `no_penyewaan` varchar(12) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tb_penyewaan`
+--
+
+INSERT INTO `tb_penyewaan` (`id_penyewaan`, `id_jadwal`, `id_user`, `id_lapangan`, `no_telp`, `harga`, `bukti_bayar`, `status`, `no_penyewaan`) VALUES
+(5, 2, 8, 2, '089695165256', '10001', 'logo9.png', 0, NULL),
+(6, 3, 8, 2, '089695165256', '10001', 'logo9.png', 0, NULL);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `user`
 --
 
@@ -177,19 +247,25 @@ CREATE TABLE `user` (
   `name` varchar(128) NOT NULL,
   `email` varchar(128) NOT NULL COMMENT 'email diganti menjadi Nomor NIP',
   `image` varchar(128) NOT NULL,
+  `no_telp` varchar(12) DEFAULT NULL,
   `password` varchar(256) NOT NULL,
   `role_id` int(11) NOT NULL,
   `is_active` int(1) NOT NULL,
-  `date_created` int(11) NOT NULL
+  `date_created` int(11) NOT NULL,
+  `no_member` varchar(12) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id`, `name`, `email`, `image`, `password`, `role_id`, `is_active`, `date_created`) VALUES
-(6, 'Admin', '123456', 'default.jpg', '$2y$10$bgu5bew9lu/osdKYkZVAH.yHdZA0NBuXhixPGvgygtsWXxXI8WKum', 1, 1, 1606876918),
-(7, 'superadmin', 'superadmin@gmail.com', 'default.jpg', '$2y$10$QU7kHEBYY9p3y2E/mVZvC.74eiVcGfrpHtjMpmgIXyqsOlo/7Vzri', 2, 1, 1607813861);
+INSERT INTO `user` (`id`, `name`, `email`, `image`, `no_telp`, `password`, `role_id`, `is_active`, `date_created`, `no_member`) VALUES
+(6, 'Administrator', 'admin@gmail.com', 'default.jpg', NULL, '$2y$10$bgu5bew9lu/osdKYkZVAH.yHdZA0NBuXhixPGvgygtsWXxXI8WKum', 1, 1, 1606876918, NULL),
+(7, 'Developer', 'developer@gmail.com', 'default.jpg', NULL, '$2y$10$bgu5bew9lu/osdKYkZVAH.yHdZA0NBuXhixPGvgygtsWXxXI8WKum', 2, 1, 1607813861, NULL),
+(8, 'Member', 'member@gmail.com', 'default.jpg', '089695165256', '$2y$10$8qiVpGRzdZe0fwAWGQKg/.tidbC5J8uIC2XECBz5mwE8SfZJRDp2G', 3, 1, 1705240367, '00001'),
+(9, 'Moonton', 'moon@gmail.com', 'default.jpg', NULL, '$2y$10$ZDUgyM5matfmMt1bPhDMb.W0K9C6z3LhOaE.w5HzJIHtjeEA5kEh6', 3, 1, 1705301947, '00010'),
+(10, 'Whoopi Roy', 'kimefesyke@mailinator.com', 'default.jpg', NULL, '$2y$10$eumFiWYXYs7n/mPj0hkEeOt2yiFLhnbFszNVxQqoBTCSZVVbTvMaO', 3, 1, 1705302313, '00003'),
+(11, 'Chaney Rivas', 'mymuvejotu@mailinator.com', 'default.jpg', '089695615256', '$2y$10$p.wWwORX2/vCJMcPSbFzgueTipGpmIBh8WZbuVSs6Sd64OuNvR8pm', 3, 1, 1705451944, '00004');
 
 -- --------------------------------------------------------
 
@@ -212,8 +288,7 @@ INSERT INTO `user_access_menu` (`id`, `role_id`, `menu_id`) VALUES
 (2, 1, 2),
 (3, 2, 2),
 (10, 2, 3),
-(11, 1, 4),
-(12, 2, 4);
+(13, 3, 2);
 
 -- --------------------------------------------------------
 
@@ -253,7 +328,8 @@ CREATE TABLE `user_role` (
 
 INSERT INTO `user_role` (`id`, `role`) VALUES
 (1, 'Administrator'),
-(2, 'Developer');
+(2, 'Developer'),
+(3, 'Member');
 
 -- --------------------------------------------------------
 
@@ -320,6 +396,28 @@ ALTER TABLE `pemohon_data_diri`
   ADD KEY `kode_pendaftaran` (`kode_pendaftaran`);
 
 --
+-- Indexes for table `tb_jadwal`
+--
+ALTER TABLE `tb_jadwal`
+  ADD PRIMARY KEY (`id_jadwal`),
+  ADD KEY `id_lapangan` (`id_lapangan`);
+
+--
+-- Indexes for table `tb_lapangan`
+--
+ALTER TABLE `tb_lapangan`
+  ADD PRIMARY KEY (`id_lapangan`);
+
+--
+-- Indexes for table `tb_penyewaan`
+--
+ALTER TABLE `tb_penyewaan`
+  ADD PRIMARY KEY (`id_penyewaan`),
+  ADD KEY `id_jadwal` (`id_jadwal`),
+  ADD KEY `id_lapangan` (`id_lapangan`),
+  ADD KEY `id_user` (`id_user`);
+
+--
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
@@ -378,16 +476,34 @@ ALTER TABLE `pemohon_data_diri`
   MODIFY `id_pemohon_dd` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
+-- AUTO_INCREMENT for table `tb_jadwal`
+--
+ALTER TABLE `tb_jadwal`
+  MODIFY `id_jadwal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `tb_lapangan`
+--
+ALTER TABLE `tb_lapangan`
+  MODIFY `id_lapangan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `tb_penyewaan`
+--
+ALTER TABLE `tb_penyewaan`
+  MODIFY `id_penyewaan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `user_access_menu`
 --
 ALTER TABLE `user_access_menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `user_menu`
@@ -399,7 +515,7 @@ ALTER TABLE `user_menu`
 -- AUTO_INCREMENT for table `user_role`
 --
 ALTER TABLE `user_role`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `user_sub_menu`
@@ -417,6 +533,20 @@ ALTER TABLE `user_sub_menu`
 ALTER TABLE `pemohon_data_diri`
   ADD CONSTRAINT `pemohon_data_diri_ibfk_1` FOREIGN KEY (`id_tgl_kedatangan`) REFERENCES `kedatangan` (`id_tgl_kedatangan`) ON DELETE CASCADE ON UPDATE NO ACTION,
   ADD CONSTRAINT `pemohon_data_diri_ibfk_2` FOREIGN KEY (`alasan_bap`) REFERENCES `alasan_bap` (`no_alasan_bap`) ON DELETE CASCADE ON UPDATE NO ACTION;
+
+--
+-- Constraints for table `tb_jadwal`
+--
+ALTER TABLE `tb_jadwal`
+  ADD CONSTRAINT `tb_jadwal_ibfk_1` FOREIGN KEY (`id_lapangan`) REFERENCES `tb_lapangan` (`id_lapangan`) ON DELETE CASCADE ON UPDATE NO ACTION;
+
+--
+-- Constraints for table `tb_penyewaan`
+--
+ALTER TABLE `tb_penyewaan`
+  ADD CONSTRAINT `tb_penyewaan_ibfk_1` FOREIGN KEY (`id_jadwal`) REFERENCES `tb_jadwal` (`id_jadwal`) ON DELETE CASCADE ON UPDATE NO ACTION,
+  ADD CONSTRAINT `tb_penyewaan_ibfk_2` FOREIGN KEY (`id_lapangan`) REFERENCES `tb_lapangan` (`id_lapangan`) ON DELETE CASCADE ON UPDATE NO ACTION,
+  ADD CONSTRAINT `tb_penyewaan_ibfk_3` FOREIGN KEY (`id_user`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

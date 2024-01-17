@@ -29,8 +29,6 @@
         <a class="collapse-item <?php echo $this->uri->segment(2) == 'lapangan' ? 'active' : '' ?>" href="<?php echo base_url('kelola/lapangan/index'); ?>">Lapangan</a>
         <a class="collapse-item <?php echo $this->uri->segment(2) == 'jadwal' ? 'active' : '' ?>" href="<?php echo base_url('kelola/jadwal/index'); ?>">Jadwal</a>
         <a class="collapse-item <?php echo $this->uri->segment(2) == 'penyewaan' ? 'active' : '' ?>" href="<?php echo base_url('kelola/penyewaan/index'); ?>">Penyewaan</a>
-        <!-- <a class="collapse-item <?php echo $this->uri->segment(2) == 'pendaftar' ? 'active' : '' ?>" href="<?php echo base_url('pemohon/pendaftar/index'); ?>">Pendaftaran</a> -->
-        <!-- <a class="collapse-item <?php echo $this->uri->segment(2) == 'putusan' ? 'active' : '' ?>" href="<?php echo base_url('pemohon/putusan/index'); ?>">Putusan</a> -->
       </div>
     </div>
   </li>

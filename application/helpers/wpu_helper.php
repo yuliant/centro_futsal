@@ -4,7 +4,7 @@ function is_logged_in_without_check_access()
 {
   $ci = get_instance();
   if (!$ci->session->userdata('email')) {
-    redirect('home');
+    redirect('auth');
   }
 }
 
