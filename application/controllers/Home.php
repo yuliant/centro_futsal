@@ -15,7 +15,7 @@ class Home extends CI_Controller
         $data['title'] = 'Home Page';
         $this->load->view('templates/auth_header', $data);
         $this->load->view('templates/topbar_main', $data);
-        $this->load->view('main/index');
+        $this->load->view('main/index2');
         $this->load->view('templates/auth_footer');
     }
 

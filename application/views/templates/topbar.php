@@ -21,13 +21,12 @@ $notif = $this->db->get()->num_rows();
       <!-- Topbar Navbar -->
       <ul class="navbar-nav ml-auto">
 
-        <li class="nav-item dropdown no-arrow mx-1">
+        <!-- <li class="nav-item dropdown no-arrow mx-1">
           <a class="nav-link" href="<?= base_url('pemohon/notif') ?>">
             <i class="fas fa-bell fa-fw"></i>
-            <!-- Counter - Alerts -->
             <span class="badge badge-danger badge-counter"><?= @$notif ?></span>
           </a>
-        </li>
+        </li> -->
 
         <div class="topbar-divider d-none d-sm-block"></div>
 

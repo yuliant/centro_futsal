@@ -38,7 +38,11 @@
                             foreach ($pemohon as $b) : ?>
                                 <tr>
                                     <td><?php echo $i ?></td>
-                                    <td><a href="<?php echo base_url(); ?>kelola/lapangan/edit/<?php echo $b->id_lapangan ?>"><?php echo $b->nama_lapangan ?></a></td>
+                                    <td>
+                                        <a href="<?php echo base_url(); ?>kelola/lapangan/edit/<?php echo $b->id_lapangan ?>">
+                                            <?php echo $b->nama_lapangan ?>
+                                        </a>
+                                    </td>
                                     <td><?php echo number_format($b->harga, 0, ',', '.'); ?></td>
                                     <td>
                                         <a href="<?php echo base_url('assets/img/data/') . $b->gambar ?>" target="_blank">

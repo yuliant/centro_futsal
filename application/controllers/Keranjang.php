@@ -17,6 +17,8 @@ class keranjang extends CI_Controller
         $this->db->join('tb_lapangan', 'tb_lapangan.id_lapangan = tb_penyewaan.id_lapangan', 'left');
         $this->db->join('tb_jadwal', 'tb_jadwal.id_jadwal = tb_penyewaan.id_jadwal', 'left');
         $this->db->where('tb_penyewaan.id_user', $user['id']);
+        $this->db->where('tb_penyewaan.status', 0);
+        $this->db->where('tb_penyewaan.bukti_bayar', null);
         $data['booking'] = $this->db->get()->result();
 
         $this->db->select_sum('harga');

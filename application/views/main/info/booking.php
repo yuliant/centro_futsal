@@ -33,10 +33,11 @@ function convert_tanggal($tanggal_input)
                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                             <thead>
                                 <tr>
-                                    <th>No.</th>
+                                    <th>Kode Booking</th>
                                     <th>Lapangan</th>
                                     <th>Tanggal</th>
                                     <th>Jam</th>
+                                    <th>Gambar</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -45,19 +46,31 @@ function convert_tanggal($tanggal_input)
                                 $i = 1;
                                 foreach ($booking as $b) : ?>
                                     <tr>
-                                        <td><?php echo $i ?></td>
-                                        <td><?php echo $b->nama_lapangan ?></td>
+                                        <td><?php echo $b->no_penyewaan ?></td>
+                                        <td>
+                                            <a href="<?php echo base_url('info/lapangan_detail/') . encrypt_url($b->id_lapangan) ?>">
+                                                <?php echo $b->nama_lapangan ?>
+                                            </a>
+                                        </td>
                                         <td>
                                             <?php echo convert_tanggal($b->tgl_jadwal) ?>
                                         </td>
                                         <td><?php echo $b->jam ?></td>
                                         <td>
-                                            <?php if ($b->status_jadwal == 1) { ?>
+                                            <a href="<?php echo base_url('assets/img/data/') . $b->bukti_bayar ?>" target="_blank">
+                                                <img src="<?php echo base_url('assets/img/data/') . $b->bukti_bayar ?>" alt="" width="100" srcset="">
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <?php if ($b->status == 0 && !$b->bukti_bayar) { ?>
                                                 <a class="badge badge-warning text-dark" href="<?= base_url('keranjang') ?>">Check keranjang</a>
-                                            <?php } elseif ($b->status_jadwal == 2) { ?>
-                                                <a class="badge badge-danger text-dark" disabled>Gagal</a>
-                                            <?php } else { ?>
+                                            <?php } elseif ($b->status == 0 && $b->bukti_bayar) { ?>
+                                                <a class="badge badge-light text-dark" disabled>Tunggu Konfirmasi</a>
+                                            <?php } elseif ($b->status == 2) { ?>
+                                                <a class="badge badge-danger text-white" disabled>Ditolak</a>
+                                            <?php } elseif ($b->status == 1) { ?>
                                                 <a class="badge badge-light text-dark" disabled>Lunas</a>
+                                                <a class="badge badge-info text-white" href="<?= base_url('info/cetak/') . encrypt_url($b->id_penyewaan) ?>">Cetak</a>
                                             <?php } ?>
                                         </td>
                                     </tr>

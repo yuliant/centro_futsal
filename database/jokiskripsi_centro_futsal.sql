@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jan 17, 2024 at 04:43 AM
+-- Generation Time: Jan 29, 2024 at 11:52 PM
 -- Server version: 5.7.33
 -- PHP Version: 7.4.19
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `jokiskripsi_futsal`
+-- Database: `jokiskripsi_centro_futsal`
 --
 
 -- --------------------------------------------------------
@@ -185,8 +185,10 @@ CREATE TABLE `tb_jadwal` (
 --
 
 INSERT INTO `tb_jadwal` (`id_jadwal`, `id_lapangan`, `tgl_jadwal`, `jam`, `status_jadwal`) VALUES
-(2, 2, '2024-01-17', '08.00 - 09.01', 1),
-(3, 2, '2024-01-17', '07.00 - 08.01', 1);
+(2, 2, '2024-01-18', '08.00 - 09.01', 0),
+(3, 2, '2024-01-19', '07.00 - 08.01', 1),
+(4, 2, '2024-01-21', '09.00 - 10.00', 0),
+(5, 2, '2024-01-24', '10.00 - 11.00', 1);
 
 -- --------------------------------------------------------
 
@@ -224,7 +226,7 @@ CREATE TABLE `tb_penyewaan` (
   `no_telp` varchar(16) NOT NULL,
   `harga` varchar(12) NOT NULL,
   `bukti_bayar` varchar(255) DEFAULT NULL,
-  `status` int(1) NOT NULL DEFAULT '0' COMMENT '0: tunda, \r\n1: konfirmasi, \r\n2: batal',
+  `status` int(1) NOT NULL DEFAULT '0' COMMENT '0: tunda, \r\n1: konfirmasi, \r\n2: tolak',
   `no_penyewaan` varchar(12) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -233,8 +235,7 @@ CREATE TABLE `tb_penyewaan` (
 --
 
 INSERT INTO `tb_penyewaan` (`id_penyewaan`, `id_jadwal`, `id_user`, `id_lapangan`, `no_telp`, `harga`, `bukti_bayar`, `status`, `no_penyewaan`) VALUES
-(5, 2, 8, 2, '089695165256', '10001', 'logo9.png', 0, NULL),
-(6, 3, 8, 2, '089695165256', '10001', 'logo9.png', 0, NULL);
+(1, 5, 8, 2, '089695165256', '10001', 'b245530f3fb7c03f81cc400bee672728.jpg', 1, '00001');
 
 -- --------------------------------------------------------
 
@@ -262,7 +263,7 @@ CREATE TABLE `user` (
 INSERT INTO `user` (`id`, `name`, `email`, `image`, `no_telp`, `password`, `role_id`, `is_active`, `date_created`, `no_member`) VALUES
 (6, 'Administrator', 'admin@gmail.com', 'default.jpg', NULL, '$2y$10$bgu5bew9lu/osdKYkZVAH.yHdZA0NBuXhixPGvgygtsWXxXI8WKum', 1, 1, 1606876918, NULL),
 (7, 'Developer', 'developer@gmail.com', 'default.jpg', NULL, '$2y$10$bgu5bew9lu/osdKYkZVAH.yHdZA0NBuXhixPGvgygtsWXxXI8WKum', 2, 1, 1607813861, NULL),
-(8, 'Member', 'member@gmail.com', 'default.jpg', '089695165256', '$2y$10$8qiVpGRzdZe0fwAWGQKg/.tidbC5J8uIC2XECBz5mwE8SfZJRDp2G', 3, 1, 1705240367, '00001'),
+(8, 'Member', 'member@gmail.com', 'MSC_Atlas.png', '089695165256', '$2y$10$8qiVpGRzdZe0fwAWGQKg/.tidbC5J8uIC2XECBz5mwE8SfZJRDp2G', 3, 1, 1705240367, '00001'),
 (9, 'Moonton', 'moon@gmail.com', 'default.jpg', NULL, '$2y$10$ZDUgyM5matfmMt1bPhDMb.W0K9C6z3LhOaE.w5HzJIHtjeEA5kEh6', 3, 1, 1705301947, '00010'),
 (10, 'Whoopi Roy', 'kimefesyke@mailinator.com', 'default.jpg', NULL, '$2y$10$eumFiWYXYs7n/mPj0hkEeOt2yiFLhnbFszNVxQqoBTCSZVVbTvMaO', 3, 1, 1705302313, '00003'),
 (11, 'Chaney Rivas', 'mymuvejotu@mailinator.com', 'default.jpg', '089695615256', '$2y$10$p.wWwORX2/vCJMcPSbFzgueTipGpmIBh8WZbuVSs6Sd64OuNvR8pm', 3, 1, 1705451944, '00004');
@@ -491,7 +492,7 @@ ALTER TABLE `tb_lapangan`
 -- AUTO_INCREMENT for table `tb_penyewaan`
 --
 ALTER TABLE `tb_penyewaan`
-  MODIFY `id_penyewaan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_penyewaan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `user`

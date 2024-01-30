@@ -26,6 +26,26 @@ class Penyewaan extends CI_Controller
         $this->load->view('kelola/penyewaan/index', $data);
         $this->load->view('templates/footer');
     }
+
+    public function change($id_penyewaan, $aktif)
+    {
+        $this->db->from('tb_penyewaan');
+        $this->db->where('id_penyewaan', $id_penyewaan);
+        $sewa = $this->db->get()->row();
+
+        $this->db->set('status', $aktif);
+        $this->db->where('id_penyewaan', $id_penyewaan);
+        $this->db->update('tb_penyewaan');
+
+        if ($aktif == 2) {
+            $this->db->set('status_jadwal', 0);
+            $this->db->where('id_jadwal', $sewa->id_jadwal);
+            $this->db->update('tb_jadwal');
+        }
+
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Data penyewaan berhasil diupdate</div>');
+        redirect('kelola/penyewaan');
+    }
 }
 
 /* End of file Penyewaan.php */

@@ -24,7 +24,7 @@
                     <tr>
                         <th scope="col">#</th>
                         <th scope="col">Nama</th>
-                        <th scope="col">NIP</th>
+                        <th scope="col">Email</th>
                         <th scope="col">Status</th>
                         <th scope="col">Tanggal dibuat</th>
                         <th scope="col">Action</th>
@@ -48,6 +48,7 @@
                             <td>
                                 <a class="badge badge-warning" href="<?php echo base_url(); ?>admin/change_status_user/<?php echo $ku['id'] . '/' . $ku['is_active']; ?>" onclick="return confirm('Status user akan diganti, yakin?');">ubah status</a>
                                 <a class="badge badge-danger" href="<?php echo base_url(); ?>admin/delete_user/<?php echo $ku['id'] ?>" onclick="return confirm('User akan dihapus, yakin?');">delete</a>
+                                <a class="badge badge-success" href="<?php echo base_url(); ?>admin/edit_user/<?php echo $ku['id'] ?>">edit</a>
                             </td>
                         </tr>
                     <?php

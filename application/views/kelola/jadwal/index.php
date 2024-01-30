@@ -59,11 +59,17 @@ function convert_tanggal($tanggal_input)
                             foreach ($pemohon as $b) : ?>
                                 <tr>
                                     <td><?php echo $i ?></td>
-                                    <td><?php echo $b->nama_lapangan ?></td>
                                     <td>
-                                        <?php echo convert_tanggal($b->tgl_jadwal) ?>
+                                        <a href="<?php echo base_url(); ?>kelola/lapangan/edit/<?php echo $b->id_lapangan ?>">
+                                            <?php echo $b->nama_lapangan ?>
+                                        </a>
                                     </td>
-                                    <td><?php echo $b->jam ?></td>
+                                    <td><?php echo convert_tanggal($b->tgl_jadwal) ?></td>
+                                    <td>
+                                        <a href="<?php echo base_url(); ?>kelola/jadwal/edit/<?php echo $b->id_jadwal ?>">
+                                            <?php echo $b->jam ?>
+                                        </a>
+                                    </td>
                                     <td><?php if ($b->status_jadwal == 0) { ?>
                                             <span class='badge-success'>Aktif</span>
                                         <?php } elseif ($b->status_jadwal == 1) { ?>

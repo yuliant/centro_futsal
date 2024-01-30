@@ -4,7 +4,9 @@ Aplikasi Centro Futsal Merupakan sebuah aplikasi berbasis web framework codeigni
 
 ### Cara Install
 1. Silahkan clone atau download repository ini.
-2. Import database yang berada di `.\databases\bap_imigrasi_jakut.sql` ke MySQL Database anda.
+2. Import database yang berada di `.\databases\jokiskripsi_centro_futsal.sql` ke MySQL Database anda.
 3. Lakukan konfigurasi pada `.\application\config\database.php` untuk mengatur database.
 4. (opsional)Check apakah file .htaccess sudah ada atau tidak. Jika tidak ada,Tambahkan file .htaccess untuk bypass index.php .
 5. Done, silahkan jalankan website.
+
+### kurang

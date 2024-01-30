@@ -22,6 +22,8 @@
   <!-- Page level custom scripts -->
   <script src="<?php echo base_url() ?>assets/js/demo/datatables-demo.js"></script>
 
+  <script src="<?php echo base_url() ?>assets/home/js/scripts.js"></script>
+
   <script>
     function isNumber(evt) {
       evt = (evt) ? evt : window.event;

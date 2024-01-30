@@ -8,7 +8,7 @@
                     <img src="<?php echo base_url('assets/img/data/') . $b->gambar ?>" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">
-                            <a href=""><?php echo $b->nama_lapangan ?></a>
+                            <a href="<?= base_url('info/lapangan_detail/' . encrypt_url($b->id_lapangan)) ?>"><?php echo $b->nama_lapangan ?></a>
                         </h5>
                         <p class="card-text ml-auto small text-start">Rp
                             <b class="text-danger">

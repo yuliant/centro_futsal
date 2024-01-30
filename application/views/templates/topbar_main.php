@@ -8,6 +8,8 @@ $user = $this->db->get_where('user', ['email' => $this->session->userdata('email
 if ($user) {
     $this->db->from('tb_penyewaan');
     $this->db->where('id_user', $user['id']);
+    $this->db->where('tb_penyewaan.status', 0);
+    $this->db->where('tb_penyewaan.bukti_bayar', null);
     $keranjang = $this->db->get()->num_rows();
 }
 
@@ -19,8 +21,8 @@ if ($user) {
     <div id="content">
 
         <!-- Topbar -->
-        <nav class="navbar navbar-dark  navbar-expand-lg" style="background-color: #006d55;">
-            <a class="navbar-brand" href="<?= base_url('home') ?>">
+        <nav class="navbar navbar-dark navbar-expand-lg" style="background-color: #006d55;">
+            <a class="navbar-brand ml-3 mr-3" href="<?= base_url('home') ?>">
                 <b>
                     Centro Futsal
                 </b>
@@ -60,25 +62,24 @@ if ($user) {
                                 <span class="badge badge-danger badge-counter"><?= @$keranjang ?></span>
                             </a>
                         </li>
-                        <li class="nav-item dropdown no-arrow mx-1">
+                        <!-- <li class="nav-item dropdown no-arrow mx-1">
                             <a class="nav-link" href="<?= base_url('pemohon/notif') ?>">
                                 <i class="fas fa-bell fa-fw"></i>
-                                <!-- Counter - Alerts -->
                                 <span class="badge badge-danger badge-counter"><?= @$notif ?></span>
                             </a>
-                        </li>
+                        </li> -->
 
                         <div class="topbar-divider d-none d-sm-block bg-white"></div>
 
                         <!-- Nav Item - User Information -->
-                        <li class="nav-item dropdown no-arrow">
+                        <li class="nav-item dropdown no-arrow ml-3 mr-3">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-white small"><b><?php echo $user['name']; ?></b></span>
                                 <img class="img-profile" width="32" src="<?php echo base_url('assets/img/profile/') . $user['image']; ?>">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="#">
+                                <a class="dropdown-item" href="<?= base_url('user/edit') ?>">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     My Profile
                                 </a>
@@ -90,7 +91,7 @@ if ($user) {
                             </div>
                         </li>
                     <?php } else { ?>
-                        <li class="nav-item dropdown no-arrow">
+                        <li class="nav-item dropdown no-arrow ml-3 mr-3">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-lg-inline text-white"><b><?php echo "Masuk"; ?></b></span>
                             </a>
