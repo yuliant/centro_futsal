@@ -1,7 +1,7 @@
 <?php
-$this->db->from('notif');
-$this->db->where('baca', 0);
-$notif = $this->db->get()->num_rows();
+// $this->db->from('notif');
+// $this->db->where('baca', 0);
+// $notif = $this->db->get()->num_rows();
 
 $user = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
 

@@ -1,7 +1,7 @@
 <?php
-$this->db->from('notif');
-$this->db->where('baca', 0);
-$notif = $this->db->get()->num_rows();
+// $this->db->from('notif');
+// $this->db->where('baca', 0);
+// $notif = $this->db->get()->num_rows();
 ?>
 <!-- Content Wrapper -->
 <div id="content-wrapper" class="d-flex flex-column">
